@@ -1,0 +1,47 @@
+{{#if alumnos}}
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr class="text-center">
+            <th>Num.</th>
+            <th>Nombre</th>
+            <th>A. Paterno</th>
+            <th>A. Materno</th>
+            <th>Fecha de nacimiento</th>
+            <th>Sexo</th>
+            <th>Celular</th>
+            <th>Dirección</th>
+            <th>Acciones</th>
+        </tr>
+    </thead>
+    <tbody>
+        {{#each alumnos}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{nombre}}</td>
+            <td>{{paterno}}</td>
+            <td>{{materno}}</td>
+            <td>{{fechaNacimiento}}</td>
+            <td>{{sexo}}</td>
+            <td>{{celular}}</td>
+            <td>{{direccion}}</td>
+            <td>
+                {{#if opcion}}
+                <a href="/alumnos/{{_id}}/statusAlumnos" class="btn btn-warning">No disponible</a>
+                {{else}}
+                <a href="/alumnos/{{_id}}/statusAlumnos" class="btn btn-success">Disponible</a>
+                {{/if}}
+                <a href="/alumnos/{{_id}}/update" class="btn btn-info mt-2">Actualizar</a>
+                <a href="/alumnos/{{_id}}/delete" class="btn btn-danger mt-2">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-centyer">
+    <div class="text-center text-white">
+        <h1>No hay alumnos</h1>
+        <img src="/icons/dobby.png" class="w-50">
+    </div>
+</div>
+{{/if}}

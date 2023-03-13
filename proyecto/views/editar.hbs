@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md 5 offset-md-3">
+            <div class="card card-body bg-dark p-4 text-white">
+                <h4 class="text-center">Actualizar profesor</h4>
+                <form action="/profesores/{{profesores._id}}/update" method="POST">
+                    <div>
+                        <label for="rfc">Modifica RFC: </label>
+                        <input type="text" name="rfc" placeholder="Nombre" value="{{profesores.rfc}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="nombres">Modifica nombre: </label>
+                        <input type="text" name="nombres" placeholder="Nombre" value="{{profesores.nombres}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="paterno">Modifica apellido paterno: </label>
+                        <input type="text" name="paterno" placeholder="Apellido Paterno" value="{{profesores.paterno}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="materno">Modifica apellido materno: </label>
+                        <input type="text" name="materno" placeholder="Apellido Materno" value="{{profesores.materno}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="fechaNacimiento">Modifica fecha de Nacimiento: </label>
+                        <input type="date" name="fechaNacimiento" placeholder="Fecha Nacimiento" value="{{profesores.fechaNacimiento}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="direccion">Modifica dirección: </label>
+                        <textarea name="direccion" cols="25" rows="5" placeholder="Direccion" class="form-control bg-dark text-white">{{profesores.direccion}}</textarea>
+                    </div>
+                    <div>
+                        <label for="celular">Modifica número de celular: </label>
+                        <input type="text" name="celular" placeholder="Celular" value="{{profesores.celular}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="profesion">Modifique su profesión: </label>
+                        <input type="text" name="profesion" placeholder="Profesion" value="{{profesores.profesion}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <div>
+                        <label for="numeroEmpleado">Modifique el número de empleado: </label>
+                        <input type="text" name="numeroEmpleado" placeholder="Numero Empleado" value="{{profesores.numeroEmpleado}}" class="form-control bg-dark text-white"/>
+                    </div>
+                    <button class="btn btn-success btn-lg mt-2">Actualizar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
