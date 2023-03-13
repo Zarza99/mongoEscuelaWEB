@@ -1,0 +1,51 @@
+{{#if profesores}}
+<table class="table table-bordered table-hover table-dark">
+    <thead>
+        <tr class="text-center">
+            <th>Num.</th>
+            <th>RFC</th>
+            <th>Nombres</th>
+            <th>A. Paterno</th>
+            <th>A. Materno</th>
+            <th>Fecha de nacimiento</th>
+            <th>Dirección</th>
+            <th>Celular</th>
+            <th>Profesión</th>
+            <th>No. Empleado</th>
+            <th>Acciones</th>
+        </tr>
+    </thead> 
+    <tbody>
+        {{#each profesores}}
+        <tr>
+            <td>{{@index}}</td>
+            <td>{{rfc}}</td>
+            <td>{{nombres}}</td>
+            <td>{{paterno}}</td>
+            <td>{{materno}}</td>
+            <td>{{fechaNacimiento}}</td>
+            <td>{{direccion}}</td>
+            <td>{{celular}}</td>
+            <td>{{profesion}}</td>
+            <td>{{numeroEmpleado}}</td>
+            <td>
+                {{#if opcion}}
+                <a href="/profesores/{{_id}}/statusProfesores" class="btn btn-warning">No disponible</a>
+                {{else}}
+                <a href="/profesores/{{_id}}/statusProfesores" class="btn btn-success">Disponible</a>
+                {{/if}}
+                <a href="/profesores/{{_id}}/update" class="btn btn-info mt-2">Actualizar</a>
+                <a href="/profesores/{{_id}}/delete" class="btn btn-danger mt-2">Eliminar</a>
+            </td>
+        </tr>
+        {{/each}}
+    </tbody>
+</table>
+{{else}}
+<div class="h-100 d-flex align-items-center justify-content-centyer">
+    <div class="text-center text-white">
+        <h1>No hay profesores</h1>
+        <img src="/icons/hasbullah.gif" class="w-50">
+    </div>
+</div>
+{{/if}}
